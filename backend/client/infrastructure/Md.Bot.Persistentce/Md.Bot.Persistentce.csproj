@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Data\" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\infrastructure\Md.Infrastructure\Md.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\core\Md.Bot.Application\Md.Bot.Application.csproj" />
   </ItemGroup>
 
 </Project>

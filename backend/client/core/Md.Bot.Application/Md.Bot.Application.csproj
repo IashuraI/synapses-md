@@ -8,10 +8,11 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\infrastructure\Md.Infrastructure\Md.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\..\infrastructure\Md.Infrastructure.Interfaces\Md.Infrastructure.Interfaces.csproj" />
     <ProjectReference Include="..\Md.Bot.Domain\Md.Bot.Domain.csproj" />
   </ItemGroup>
 
