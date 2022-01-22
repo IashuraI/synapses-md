@@ -1,9 +1,9 @@
 ﻿using Md.Domain.Entities.Order;
 using Md.Domain.Entities.Product;
-using Md.Domain.Interfaces;
+using Md.Infrastructure.Interfaces;
+using Md.Infrastructure.Repositories;
 using Md.Persistentce.Data;
 using Md.Persistentce.Entities;
-using Md.Persistentce.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -16,8 +16,8 @@ namespace Md.Persistentce
         public static IServiceCollection AddPersistence(this IServiceCollection
             services, IConfiguration configuration)
         {
-            services.AddSingleton<IRepository<Order>, RepositoryEF<Order>>();
-            services.AddSingleton<IRepository<Product>, RepositoryEF<Product>>();
+            services.AddSingleton<IRepository<Order, Guid>, RepositoryEF<Order, Guid, MdDbContext>>();
+            services.AddSingleton<IRepository<Product, Guid>, RepositoryEF<Product, Guid, MdDbContext>>();
             
             services.AddMdDbContext(configuration);
             services.AddIdentityDbContext(configuration);
