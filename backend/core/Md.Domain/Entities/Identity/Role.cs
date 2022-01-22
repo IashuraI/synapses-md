@@ -1,6 +1,6 @@
-﻿namespace Md.Domain.DTO.Identity
+﻿namespace Md.Domain.Entities.Identity
 {
-    internal class RoleDTO
+    public sealed class Role
     {
         public Guid Id { get; set; }
 

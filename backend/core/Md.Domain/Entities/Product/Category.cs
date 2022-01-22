@@ -1,6 +1,6 @@
-﻿namespace Md.Domain.DTO.Product
+﻿namespace Md.Domain.Entities.Product
 {
-    public class CategoryDTO
+    public sealed class Category
     {
         public Guid Id { get; set; }
         public string? Name { get; set; }

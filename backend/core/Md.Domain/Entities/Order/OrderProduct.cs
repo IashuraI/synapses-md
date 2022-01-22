@@ -1,6 +1,6 @@
-﻿namespace Md.Domain.DTO.Order
+﻿namespace Md.Domain.Entities.Order
 {
-    public class OrderProductDTO
+    public sealed class OrderProduct
     {
         public Guid Id { get; set; }
         public Guid OrderId { get; set; }

@@ -1,8 +1,8 @@
 ﻿using Md.Domain.Enums;
 
-namespace Md.Domain.DTO.Order
+namespace Md.Domain.Entities.Order
 {
-    public class OrderDTO
+    public sealed class Order
     {
         public Guid Id { get; set; }
         public Guid UserId { get; set; }
