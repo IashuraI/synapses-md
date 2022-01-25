@@ -1,11 +1,13 @@
 ﻿using Md.Infrastructure.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OData.Query;
 
 namespace Md.Infrastructure.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class CrudController<TEntity, T> : ControllerBase 
+    [EnableQuery]
+    public class CrudController<TEntity, T> : ControllerBase
         where TEntity : class where T : struct
     {
         protected readonly IRepository<TEntity, T> _repository;
