@@ -1,7 +1,9 @@
 ﻿using Md.Domain.Enums;
+using Md.Infrastucture.Meta.Attributes;
 
 namespace Md.Domain.Entities.Order
 {
+    [Resource]
     public sealed class Order
     {
         public Guid Id { get; set; }

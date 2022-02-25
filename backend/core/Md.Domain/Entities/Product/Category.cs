@@ -1,5 +1,8 @@
-﻿namespace Md.Domain.Entities.Product
+﻿using Md.Infrastucture.Meta.Attributes;
+
+namespace Md.Domain.Entities.Product
 {
+    [Resource]
     public sealed class Category
     {
         public Guid Id { get; set; }
