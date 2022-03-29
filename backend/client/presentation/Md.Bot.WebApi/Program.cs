@@ -44,7 +44,7 @@ if (env.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
     app.UseSwagger();
-    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Synapses.MealDelivery.Client v1"));
+    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Md.Bot.WebApi v1"));
 }
 
 app.Services.GetRequiredService<TelegramBotService>().GetBotAsync().Wait();

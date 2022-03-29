@@ -1,0 +1,12 @@
+{
+    "Logging": {
+        "LogLevel": {
+            "Default": "Information",
+            "Microsoft.AspNetCore": "Warning"
+        }
+    },
+    "TelegramCredentials": {
+        "Url": "https://6536-185-177-190-54.ngrok.io/",
+        "Token": "2101842306:AAHhlR38tBKAqvrgIMkumrWjK40bH8kNRL8"
+    }
+}
