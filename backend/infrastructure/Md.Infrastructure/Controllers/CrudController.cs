@@ -1,13 +1,14 @@
 ﻿using Md.Infrastructure.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OData.Query;
+using Microsoft.AspNetCore.OData.Routing.Controllers;
 
 namespace Md.Infrastructure.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
     [EnableQuery]
-    public class CrudController<TEntity, T> : ControllerBase
+    public class CrudController<TEntity, T> : ODataController
         where TEntity : class where T : struct
     {
         protected readonly IRepository<TEntity, T> _repository;
@@ -24,7 +25,7 @@ namespace Md.Infrastructure.Controllers
         }
 
         [HttpGet("{id}")]
-        public virtual async Task<TEntity> Get(T id)
+        public virtual async Task<TEntity> GetById(T id)
         {
             return await _repository.Get(id);
         }

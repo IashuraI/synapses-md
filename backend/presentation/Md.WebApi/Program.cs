@@ -1,7 +1,6 @@
-using Md.Infrastucture.Meta.Services;
+using Md.Infrastucture.Meta.Odata;
 using Md.Persistentce;
 using Microsoft.AspNetCore.OData;
-using Microsoft.Extensions.Caching.Memory;
 using Microsoft.OpenApi.Models;
 using Serilog;
 
@@ -14,7 +13,7 @@ builder.Services.AddControllers()
     .AddOData(options => {
         options.Select().Filter().OrderBy();
         options.AddRouteComponents("odata", EdmModelProvider.GetEdmModel(cfg["EdmModelAssemby"]));
-    });
+    }).AddNewtonsoftJson();
 
 builder.Host.UseSerilog((ctx, cfg) => cfg.WriteTo.Console());
 
@@ -23,10 +22,9 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Md.WebApi", Version = "v1" });
 });
 
-builder.Services.AddSingleton<IMemoryCache, MemoryCache>();
-builder.Services.AddSingleton<ResourceService>();
-
 builder.Services.AddPersistence(cfg);
+
+builder.Services.AddFormaters();
 
 WebApplication app = builder.Build();
 

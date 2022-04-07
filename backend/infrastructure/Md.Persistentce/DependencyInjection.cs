@@ -29,8 +29,8 @@ namespace Md.Persistentce
             return services;
         }
 
-        private static IServiceCollection AddMdDbContext(this IServiceCollection
-            services, IConfiguration configuration)
+        private static IServiceCollection AddMdDbContext(this IServiceCollection services,
+            IConfiguration configuration)
         {
             string connectionString = configuration.GetConnectionString("MdDbConnection");
             services.AddDbContext<MdDbContext>(options =>
@@ -38,8 +38,8 @@ namespace Md.Persistentce
             return services;
         }
 
-        private static IServiceCollection AddIdentityDbContext(this IServiceCollection
-            services, IConfiguration configuration)
+        private static IServiceCollection AddIdentityDbContext(this IServiceCollection services,
+            IConfiguration configuration)
         {
             string connectionString = configuration.GetConnectionString("IdentityDbConnection");
             services.AddDbContext<IdentityDbContext>(options =>

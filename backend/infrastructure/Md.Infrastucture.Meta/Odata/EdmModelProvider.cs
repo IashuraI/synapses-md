@@ -3,7 +3,7 @@ using Microsoft.OData.Edm;
 using Microsoft.OData.ModelBuilder;
 using System.Reflection;
 
-namespace Md.Infrastucture.Meta.Services
+namespace Md.Infrastucture.Meta.Odata
 {
     public static class EdmModelProvider
     {
