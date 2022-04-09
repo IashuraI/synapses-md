@@ -1,5 +1,6 @@
 using Md.Infrastucture.Meta.Odata;
 using Md.Persistentce;
+using Md.Persistentce.Data;
 using Microsoft.AspNetCore.OData;
 using Microsoft.OpenApi.Models;
 using Serilog;
@@ -11,7 +12,7 @@ var env = builder.Environment;
 
 builder.Services.AddControllers()
     .AddOData(options => {
-        options.Select().Filter().OrderBy();
+        options.Select().Filter().OrderBy().Count().Expand().SkipToken();
         options.AddRouteComponents("odata", EdmModelProvider.GetEdmModel(cfg["EdmModelAssemby"]));
     }).AddNewtonsoftJson();
 
@@ -36,6 +37,8 @@ if (env.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Md.WebApi v1"));
 }
+
+app.Services.GetService<MdDbContext>()!.Database.EnsureCreatedAsync().Wait();
 
 app.UseRouting();
 

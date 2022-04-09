@@ -5,6 +5,8 @@ using Serilog;
 using Md.Bot.Application.Commands;
 using Md.Bot.Persistentce;
 using Microsoft.OpenApi.Models;
+using Md.Bot.Persistentce.Data;
+using Simple.OData.Client;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,6 +31,7 @@ builder.Services.AddSingleton<Command, BackCommand>();
 builder.Services.AddSingleton<Command, StartCommand>();
 builder.Services.AddSingleton<Command, AvailableOrdersCommand>();
 builder.Services.AddSingleton<Command, MyOrdersCommand>();
+builder.Services.AddSingleton<ODataClient>(new ODataClient("https://localhost:7252/odata"));
 
 builder.Services.AddSwaggerGen(c =>
 {
@@ -48,6 +51,7 @@ if (env.IsDevelopment())
 }
 
 app.Services.GetRequiredService<TelegramBotService>().GetBotAsync().Wait();
+app.Services.GetService<TelegramDbContext>()!.Database.EnsureCreatedAsync().Wait();
 
 app.UseRouting();
 
