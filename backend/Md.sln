@@ -41,6 +41,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Synapsess.Infrastructure", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Synapsess.Infrastructure.Interfaces", "tools\Synapsess.Infrastructure.Interfaces\Synapsess.Infrastructure.Interfaces.csproj", "{DBD9D712-3B26-4724-8215-09BF8CE5B128}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{CBB78B01-CB73-4FB9-8467-58DC95278EC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Md.WebApi.Tests", "tests\Md.WebApi.Tests\Md.WebApi.Tests.csproj", "{39F085AE-67D3-4ED1-83C5-2478BD351061}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +95,10 @@ Global
 		{DBD9D712-3B26-4724-8215-09BF8CE5B128}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBD9D712-3B26-4724-8215-09BF8CE5B128}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBD9D712-3B26-4724-8215-09BF8CE5B128}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39F085AE-67D3-4ED1-83C5-2478BD351061}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39F085AE-67D3-4ED1-83C5-2478BD351061}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39F085AE-67D3-4ED1-83C5-2478BD351061}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39F085AE-67D3-4ED1-83C5-2478BD351061}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -110,6 +118,7 @@ Global
 		{750D987C-4962-4693-855E-E502EF77CCE5} = {20561FB1-144F-46D4-9417-17E1DC78E9C1}
 		{12C48D64-2417-478C-B905-2D58D94F2F2D} = {C05311B6-7D80-4656-A61B-15B9E92B0998}
 		{DBD9D712-3B26-4724-8215-09BF8CE5B128} = {C05311B6-7D80-4656-A61B-15B9E92B0998}
+		{39F085AE-67D3-4ED1-83C5-2478BD351061} = {CBB78B01-CB73-4FB9-8467-58DC95278EC0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A423357E-E229-47D9-A252-81B9A55B2F20}
