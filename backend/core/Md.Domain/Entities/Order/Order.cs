@@ -1,26 +1,28 @@
-﻿using Md.Domain.Enums;
+﻿using Md.Domain.Entities.Base;
+using Md.Domain.Entities.Delivery;
+using Md.Domain.Entities.Identity;
+using Md.Domain.Entities.Location;
+using Md.Domain.Enums;
 using Md.Infrastucture.Meta.Attributes;
 
 namespace Md.Domain.Entities.Order
 {
     [Resource]
-    public sealed class Order
+    public sealed class Order : BaseEntity
     {
-        public Guid Id { get; set; }
         public Guid UserId { get; set; }
-        public long? DeliverymanId { get; set; }
+        public Guid AddressFromId { get; set; }
+        public Guid AddressToId { get; set; }
+        public long? DeliveryManId { get; set; }
         public decimal OrderPrice { get; set; }
-        public string Street { get; set; } = string.Empty;
-        public string House { get; set; } = string.Empty;
-        public string Entrance { get; set; } = string.Empty;
-        public string Frame { get; set; } = string.Empty;
-        public string Apartment { get; set; } = string.Empty;
-        public string Floor { get; set; } = string.Empty;
         public DateTime OpenTime { get; set; }
         public DateTime? CloseTime { get; set; }
-        public City CityId { get; set; }
         public OrderStatus OrderStatus { get; set; }
         public PaymentMethod PaymentMethod { get; set; }
         public DeliveryStatus DeliveryStatus { get; set; }
+        public DeliveryMan? DeliveryMan { get; set; }
+        public User User { get; set; } = null!;
+        public Address AddressFrom { get; set; } = null!;
+        public Address AddressTo { get; set; } = null!;
     }
 }

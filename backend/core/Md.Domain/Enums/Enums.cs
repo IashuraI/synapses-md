@@ -5,11 +5,6 @@
         Open,
         Closed
     }
-    public enum City
-    {
-        Kiev,
-        khmelnytskyi
-    }
     public enum PaymentMethod
     {
         Cash,

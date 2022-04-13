@@ -5,10 +5,10 @@ using Microsoft.AspNetCore.OData;
 using Microsoft.OpenApi.Models;
 using Serilog;
 
-var builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-var cfg = builder.Configuration;
-var env = builder.Environment;
+ConfigurationManager cfg = builder.Configuration;
+IWebHostEnvironment env = builder.Environment;
 
 builder.Services.AddControllers()
     .AddOData(options => {

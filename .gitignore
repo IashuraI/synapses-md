@@ -82,3 +82,6 @@ Thumbs.db
 
 # sqlite db
 TelegramContextDb.db
+
+# backend
+appsettings.Development.json
