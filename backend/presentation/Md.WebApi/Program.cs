@@ -25,8 +25,6 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services.AddPersistence(cfg);
 
-builder.Services.AddFormaters();
-
 WebApplication app = builder.Build();
 
 app.UseSerilogRequestLogging();
