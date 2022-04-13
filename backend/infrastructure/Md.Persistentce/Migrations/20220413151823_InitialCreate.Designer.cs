@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Md.Persistentce.Migrations
 {
     [DbContext(typeof(MdDbContext))]
-    [Migration("20220413134630_User_Create")]
-    partial class User_Create
+    [Migration("20220413151823_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -225,10 +225,7 @@ namespace Md.Persistentce.Migrations
                     b.Property<Guid>("CustomerId")
                         .HasColumnType("uuid");
 
-                    b.Property<long?>("DeliveryManId")
-                        .HasColumnType("bigint");
-
-                    b.Property<Guid?>("DeliveryManId1")
+                    b.Property<Guid?>("DeliveryManId")
                         .HasColumnType("uuid");
 
                     b.Property<int>("DeliveryStatus")
@@ -259,7 +256,7 @@ namespace Md.Persistentce.Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.HasIndex("DeliveryManId1");
+                    b.HasIndex("DeliveryManId");
 
                     b.HasIndex("UpdatedUserId");
 
@@ -550,7 +547,7 @@ namespace Md.Persistentce.Migrations
 
                     b.HasOne("Md.Domain.Entities.Delivery.DeliveryMan", "DeliveryMan")
                         .WithMany()
-                        .HasForeignKey("DeliveryManId1");
+                        .HasForeignKey("DeliveryManId");
 
                     b.HasOne("Md.Domain.Entities.Identity.User", "UpdatedUser")
                         .WithMany()

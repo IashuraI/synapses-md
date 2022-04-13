@@ -13,7 +13,7 @@ namespace Md.Domain.Entities.Order
         public Guid CustomerId { get; set; }
         public Guid AddressFromId { get; set; }
         public Guid AddressToId { get; set; }
-        public long? DeliveryManId { get; set; }
+        public Guid? DeliveryManId { get; set; }
         public decimal OrderPrice { get; set; }
         public DateTime OpenTime { get; set; }
         public DateTime? CloseTime { get; set; }
