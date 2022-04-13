@@ -22,7 +22,7 @@ namespace Md.Infrastucture.Meta.Odata
 
         private static IEnumerable<Type> GetTypesInNamespace(Assembly assembly)
         {
-            return assembly.GetTypes().Where(t => t.GetCustomAttribute(typeof(ResourceAttribute)) != default);
+            return assembly.GetTypes().Where(t => t.GetCustomAttribute(typeof(ODataResourceAttribute)) != default);
         }
     }
 }

@@ -58,7 +58,7 @@ namespace Md.Application.Google
             return default;
         }
 
-        private List<Address> ParseGoogleMapsAddressList(List<PlaceAutocompletePrediction> placeAutocompletePredictions)
+        private static List<Address> ParseGoogleMapsAddressList(List<PlaceAutocompletePrediction> placeAutocompletePredictions)
         {
             List<Address> list = new();
 
@@ -74,7 +74,7 @@ namespace Md.Application.Google
             return list;
         }
 
-        private Address ParseGoogleMapsAddress(Place place)
+        private static Address ParseGoogleMapsAddress(Place place)
         {
             Address address = new();
 

@@ -2,7 +2,7 @@
 using Md.Bot.Domain.Interfaces;
 using Telegram.Bot.Types;
 using Md.Bot.Domain.Entities;
-using Md.Infrastructure.Interfaces;
+using Synapsess.Infrastructure.Interfaces;
 using Md.Bot.Application.Services;
 
 namespace Md.Bot.WebApi.Controllers

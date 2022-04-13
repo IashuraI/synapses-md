@@ -3,7 +3,7 @@ using Md.Bot.Domain.Commands;
 using Md.Bot.Domain.Constants;
 using Md.Bot.Domain.Entities;
 using Telegram.Bot.Types;
-using Md.Infrastructure.Interfaces;
+using Synapsess.Infrastructure.Interfaces;
 using Md.Bot.Application.Services;
 
 namespace Md.Bot.Application.Commands

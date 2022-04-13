@@ -1,6 +1,6 @@
-﻿using Md.Domain.Entities.Product;
-using Md.Infrastructure.Controllers;
-using Md.Infrastructure.Interfaces;
+﻿using Md.Domain.Entities.Products;
+using Synapsess.Infrastructure.Controllers;
+using Synapsess.Infrastructure.Interfaces;
 
 namespace Md.WebApi.Controllers
 {

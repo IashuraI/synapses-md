@@ -1,6 +1,6 @@
 ﻿using Md.Bot.Domain.Entities;
 using Md.Bot.Domain.Interfaces;
-using Md.Infrastructure.Interfaces;
+using Synapsess.Infrastructure.Interfaces;
 
 namespace Md.Bot.Application.Services
 {

@@ -1,16 +1,16 @@
 ﻿using Md.Domain.Entities.Base;
 using Md.Domain.Entities.Delivery;
-using Md.Domain.Entities.Identity;
+using Md.Domain.Entities.Customers;
 using Md.Domain.Entities.Location;
 using Md.Domain.Enums;
 using Md.Infrastucture.Meta.Attributes;
 
 namespace Md.Domain.Entities.Order
 {
-    [Resource]
+    [ODataResource]
     public sealed class Order : BaseEntity
     {
-        public Guid UserId { get; set; }
+        public Guid CustomerId { get; set; }
         public Guid AddressFromId { get; set; }
         public Guid AddressToId { get; set; }
         public long? DeliveryManId { get; set; }
@@ -21,7 +21,7 @@ namespace Md.Domain.Entities.Order
         public PaymentMethod PaymentMethod { get; set; }
         public DeliveryStatus DeliveryStatus { get; set; }
         public DeliveryMan? DeliveryMan { get; set; }
-        public User User { get; set; } = null!;
+        public Customer Customer { get; set; } = null!;
         public Address AddressFrom { get; set; } = null!;
         public Address AddressTo { get; set; } = null!;
     }

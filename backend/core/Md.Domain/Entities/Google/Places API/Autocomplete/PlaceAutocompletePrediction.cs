@@ -1,5 +1,8 @@
-﻿namespace Md.Domain.Entities.Google.Places_API.Autocomplete
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace Md.Domain.Entities.Google.Places_API.Autocomplete
 {
+    [SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>")]
     public class PlaceAutocompletePrediction
     {
         public string place_id { get; set; } = null!;

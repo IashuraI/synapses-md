@@ -1,15 +1,8 @@
-﻿using Md.Domain.Entities.Base;
-using Md.Infrastucture.Meta.Attributes;
+﻿using Microsoft.AspNetCore.Identity;
 
 namespace Md.Domain.Entities.Identity
 {
-    [Resource]
-    public sealed class User : BaseEntity
+    public sealed class User : IdentityUser<Guid>
     {
-        public string UserName { get; set; } = string.Empty;
-
-        public string Email { get; set; } = string.Empty;
-
-        public string PhoneNumber { get; set; } = string.Empty;
     }
 }

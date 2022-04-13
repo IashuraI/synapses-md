@@ -1,11 +1,8 @@
-﻿using Md.Domain.Entities.Base;
-using Md.Infrastucture.Meta.Attributes;
+﻿using Microsoft.AspNetCore.Identity;
 
 namespace Md.Domain.Entities.Identity
 {
-    [Resource]
-    public sealed class Role : BaseEntity
+    public sealed class Role : IdentityRole<Guid>
     {
-        public string Name { get; set; } = string.Empty;
     }
 }

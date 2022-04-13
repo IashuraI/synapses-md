@@ -1,7 +1,7 @@
 ﻿using Md.Bot.Domain.Entities;
 using Md.Bot.Persistentce.Data;
-using Md.Infrastructure.Interfaces;
-using Md.Infrastructure.Repositories;
+using Synapsess.Infrastructure.Interfaces;
+using Synapsess.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

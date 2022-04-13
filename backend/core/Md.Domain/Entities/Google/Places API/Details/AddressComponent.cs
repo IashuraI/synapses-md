@@ -1,5 +1,8 @@
-﻿namespace Md.Domain.Entities.Google.Places_API.Details
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace Md.Domain.Entities.Google.Places_API.Details
 {
+    [SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>")]
     public class AddressComponent
     {
         public string long_name { get; set; } = null!;

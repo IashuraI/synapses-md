@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -15,8 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.3" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.3">
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.4">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -25,8 +25,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\infrastructure\Md.Infrastructure\Md.Infrastructure.csproj" />
     <ProjectReference Include="..\..\infrastructure\Md.Persistentce\Md.Persistentce.csproj" />
+    <ProjectReference Include="..\..\Synapsess.Infrastructure.Interfaces\Synapsess.Infrastructure.Interfaces.csproj" />
+    <ProjectReference Include="..\..\tools\Synapsess.Infrastructure\Synapsess.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>
