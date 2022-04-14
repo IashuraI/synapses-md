@@ -6,6 +6,7 @@ using Md.Domain.Entities.Identity;
 using Md.Domain.Entities.Customers;
 using Md.Domain.Entities.Delivery;
 using Md.Domain.Entities.Location;
+using Md.Domain.Entities.Meal;
 
 namespace Md.Persistentce.Data
 {
@@ -24,6 +25,10 @@ namespace Md.Persistentce.Data
         public DbSet<DeliveryMan> DeliveryMen { get; set; } = null!;
 
         public DbSet<Address> Addresses { get; set; } = null!;
+
+        public DbSet<Meal> Meals { get; set; } = null!;
+
+        public DbSet<ProductRecord> ProductRecords { get; set; } = null!;
 
         public MdDbContext(DbContextOptions<MdDbContext> options) : base(options) { }
     }

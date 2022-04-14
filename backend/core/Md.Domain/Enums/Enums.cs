@@ -18,4 +18,9 @@
         InDelivery,
         Delivered
     }
+    public enum AmountType
+    {
+        Things,
+        Kilograms
+    }
 }
