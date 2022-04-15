@@ -1,7 +1,7 @@
 ﻿using Md.Domain.Entities.Base;
 using Md.Domain.Entities.Products;
 
-namespace Md.Domain.Entities.Meal
+namespace Md.Domain.Entities.Meals
 {
     public class Meal : BaseEntity
     {

@@ -1,7 +1,4 @@
-﻿using Md.Domain.Constants.Identity;
-using Md.Domain.Entities.Order;
-
-namespace Md.Application.Seeding
+﻿namespace Md.Application.Seeding
 {
     public class GeneralSeedingDataService
     {

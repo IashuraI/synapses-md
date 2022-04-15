@@ -1,4 +1,4 @@
-﻿using Md.Domain.Entities.Order;
+﻿using Md.Domain.Entities.Orders;
 using Md.Domain.Entities.Products;
 using Md.Domain.Entities.Identity;
 using Synapsess.Infrastructure.Interfaces;
@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Md.Domain.Entities.Meals;
 
 namespace Md.Persistentce
 {
@@ -16,8 +17,9 @@ namespace Md.Persistentce
         public static IServiceCollection AddPersistence(this IServiceCollection
             services, IConfiguration configuration)
         {
-            services.AddSingleton<IRepository<Order, Guid>, RepositoryEF<Order, Guid, MdDbContext>>();
-            services.AddSingleton<IRepository<Product, Guid>, RepositoryEF<Product, Guid, MdDbContext>>();
+            services.AddScoped<IRepository<Order, Guid>, RepositoryEF<Order, Guid, MdDbContext>>();
+            services.AddScoped<IRepository<Meal, Guid>, RepositoryEF<Meal, Guid, MdDbContext>>();
+            services.AddScoped<IRepository<Product, Guid>, RepositoryEF<Product, Guid, MdDbContext>>();
             
             services.AddMdDbContext(configuration);
 
@@ -32,8 +34,7 @@ namespace Md.Persistentce
             IConfiguration configuration)
         {
             string connectionString = configuration.GetConnectionString("MdDbConnection");
-            services.AddDbContext<MdDbContext>(options =>
-                options.UseNpgsql(connectionString), ServiceLifetime.Singleton);
+            services.AddDbContext<MdDbContext>(options => options.UseNpgsql(connectionString));
             return services;
         }
     }

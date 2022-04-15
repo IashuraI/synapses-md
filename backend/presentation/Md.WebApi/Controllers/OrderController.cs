@@ -1,4 +1,4 @@
-﻿using Md.Domain.Entities.Order;
+﻿using Md.Domain.Entities.Orders;
 using Synapsess.Infrastructure.Controllers;
 using Synapsess.Infrastructure.Interfaces;
 

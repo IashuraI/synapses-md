@@ -1,4 +1,4 @@
-﻿namespace Md.Domain.Constants.Identity
+﻿namespace Md.Domain.Constants.Seeding
 {
     public static class UserConstants
     {

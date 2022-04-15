@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Md.Domain.Entities.Order;
+using Md.Domain.Entities.Orders;
 using Md.Domain.Entities.Products;
 using Microsoft.EntityFrameworkCore;
 using Md.Domain.Entities.Identity;
 using Md.Domain.Entities.Customers;
 using Md.Domain.Entities.Delivery;
 using Md.Domain.Entities.Location;
-using Md.Domain.Entities.Meal;
+using Md.Domain.Entities.Meals;
 
 namespace Md.Persistentce.Data
 {
@@ -18,7 +18,7 @@ namespace Md.Persistentce.Data
 
         public DbSet<Order> Orders { get; set; } = null!;
 
-        public DbSet<OrderProduct> OrderProducts { get; set; } = null!;
+        public DbSet<OrderMeal> OrderMeals { get; set; } = null!;
 
         public DbSet<Customer> Customers { get; set; } = null!;
 

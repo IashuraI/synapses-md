@@ -5,7 +5,7 @@ using Md.Domain.Entities.Location;
 using Md.Domain.Enums;
 using Md.Infrastucture.Meta.Attributes;
 
-namespace Md.Domain.Entities.Order
+namespace Md.Domain.Entities.Orders
 {
     [ODataResource]
     public sealed class Order : BaseEntity
@@ -24,5 +24,6 @@ namespace Md.Domain.Entities.Order
         public Customer Customer { get; set; } = null!;
         public Address AddressFrom { get; set; } = null!;
         public Address AddressTo { get; set; } = null!;
+        public List<OrderMeal> OrderMeals { get; set; } = new List<OrderMeal>();
     }
 }

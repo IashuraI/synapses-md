@@ -1,4 +1,5 @@
-﻿using Md.Domain.Entities.Meal;
+﻿using Md.Domain.Constants.Seeding;
+using Md.Domain.Entities.Meals;
 using Md.Domain.Entities.Products;
 using Synapsess.Infrastructure.Interfaces;
 
@@ -26,11 +27,7 @@ namespace Md.Application.Seeding
             }
 
             Meal meal = PhiladelphiaWithSalmon();
-
-            foreach(Product product in meal.Products)
-            {
-                product.Id = products.First(pr => pr.Name == pr.Name).Id;
-            }
+            meal.Products = products;
 
             await _mealRepository.Create(meal);
         }
@@ -42,7 +39,9 @@ namespace Md.Application.Seeding
                 Name = "Philadelphia with salmon",
                 Price = 310,
                 Products = new List<Product>() { new Product { Name = Salmon().Name }, new Product { Name = CreamCheese().Name },
-                    new Product { Name = Cucumber().Name }, new Product { Name = Rice().Name }, new Product { Name = Nori().Name }, }
+                    new Product { Name = Cucumber().Name }, new Product { Name = Rice().Name }, new Product { Name = Nori().Name }, },
+                CreatedUserId = UserConstants.DonnieBryantId,
+                Category = new Category() { Name = "Sushi", CreatedUserId = UserConstants.DonnieBryantId } 
             };
         }
 
@@ -51,6 +50,7 @@ namespace Md.Application.Seeding
             return new Product()
             {
                 Name = "Salmon",
+                CreatedUserId = UserConstants.DonnieBryantId
             };
         }
 
@@ -59,6 +59,7 @@ namespace Md.Application.Seeding
             return new Product()
             {
                 Name = "Nori",
+                CreatedUserId = UserConstants.DonnieBryantId
             };
         }
 
@@ -67,6 +68,7 @@ namespace Md.Application.Seeding
             return new Product()
             {
                 Name = "Cucumber",
+                CreatedUserId = UserConstants.DonnieBryantId
             };
         }
 
@@ -75,6 +77,7 @@ namespace Md.Application.Seeding
             return new Product()
             {
                 Name = "Rice",
+                CreatedUserId = UserConstants.DonnieBryantId
             };
         }
 
@@ -83,6 +86,7 @@ namespace Md.Application.Seeding
             return new Product()
             {
                 Name = "Cream cheese",
+                CreatedUserId = UserConstants.DonnieBryantId
             };
         }
     }
