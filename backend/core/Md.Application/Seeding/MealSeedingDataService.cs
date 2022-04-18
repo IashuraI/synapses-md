@@ -5,7 +5,7 @@ using Synapsess.Infrastructure.Interfaces;
 
 namespace Md.Application.Seeding
 {
-    public class MealSeedingDataService : ISeedingService
+    public class MealSeedingDataService
     {
         public readonly IRepository<Meal, Guid> _mealRepository;
         public readonly IRepository<Product, Guid> _productRepository;
@@ -32,14 +32,13 @@ namespace Md.Application.Seeding
             await _mealRepository.Create(meal);
         }
 
-        public Meal PhiladelphiaWithSalmon()
+        private Meal PhiladelphiaWithSalmon()
         {
             return new Meal()
             {
+                Id = SeedingConstants.MealId,
                 Name = "Philadelphia with salmon",
                 Price = 310,
-                Products = new List<Product>() { new Product { Name = Salmon().Name }, new Product { Name = CreamCheese().Name },
-                    new Product { Name = Cucumber().Name }, new Product { Name = Rice().Name }, new Product { Name = Nori().Name }, },
                 CreatedUserId = UserConstants.DonnieBryantId,
                 Category = new Category() { Name = "Sushi", CreatedUserId = UserConstants.DonnieBryantId } 
             };

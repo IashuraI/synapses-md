@@ -2,19 +2,23 @@
 {
     public class GeneralSeedingDataService
     {
-        private readonly IEnumerable<ISeedingService> _seedingServices;
+        private readonly IdentitySeedingDataServie _identitySeedingDataServie;
+        private readonly MealSeedingDataService _mealSeedingDataService;
+        private readonly OrderSeedingDataServicecs _orderSeedingDataServicecs;
 
-        public GeneralSeedingDataService(IEnumerable<ISeedingService> seedingServices)
+        public GeneralSeedingDataService(IdentitySeedingDataServie identitySeedingDataServie, 
+            MealSeedingDataService mealSeedingDataService, OrderSeedingDataServicecs orderSeedingDataServicecs)
         {
-            _seedingServices = seedingServices;
+            _identitySeedingDataServie = identitySeedingDataServie;
+            _mealSeedingDataService = mealSeedingDataService;
+            _orderSeedingDataServicecs = orderSeedingDataServicecs;
         }
 
         public async Task GeneralSeed()
         {
-            foreach (ISeedingService service in _seedingServices)
-            {
-                await service.Seed();
-            }
+            await _identitySeedingDataServie.Seed();
+            await _mealSeedingDataService.Seed();
+            await _orderSeedingDataServicecs.Seed();
         }
     }
 }

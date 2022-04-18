@@ -1,19 +1,24 @@
 ﻿using Md.Domain.Constants.Identity;
 using Md.Domain.Constants.Seeding;
+using Md.Domain.Entities.Customers;
 using Md.Domain.Entities.Identity;
 using Microsoft.AspNetCore.Identity;
+using Synapsess.Infrastructure.Interfaces;
 
 namespace Md.Application.Seeding
 {
-    public class IdentitySeedingDataServie : ISeedingService
+    public class IdentitySeedingDataServie
     {
         private readonly RoleManager<Role> _roleManager;
         private readonly UserManager<User> _userManager;
+        private readonly IRepository<Customer, Guid> _customerRepository;
 
-        public IdentitySeedingDataServie(RoleManager<Role> roleManager, UserManager<User> userManager)
+        public IdentitySeedingDataServie(RoleManager<Role> roleManager, UserManager<User> userManager,
+            IRepository<Customer, Guid> customerRepository)
         {
             _roleManager = roleManager;
             _userManager = userManager;
+            _customerRepository = customerRepository;
         }
 
         public async Task Seed()
@@ -38,6 +43,8 @@ namespace Md.Application.Seeding
             User ellenWilkes = EllenWilkes();
             await _userManager.CreateAsync(ellenWilkes, "Qwe123!");
             await _userManager.AddToRoleAsync(ellenWilkes, RoleConstants.Customer);
+
+            await _customerRepository.Create(EllenWilkesCustomer());
         }
 
         private User DonnieBryant()
@@ -58,6 +65,17 @@ namespace Md.Application.Seeding
         private User EllenWilkes()
         {
             return new() { Id = UserConstants.EllenWilkesId, UserName = "EllenWilkes" };
+        }
+
+        private Customer EllenWilkesCustomer()
+        {
+            return new()
+            {
+                Id = SeedingConstants.EllenWilkesId,
+                FirstName = "Ellen",
+                LastName = "Wilkes",
+                CreatedUserId = UserConstants.EllenWilkesId
+            };
         }
     }
 }

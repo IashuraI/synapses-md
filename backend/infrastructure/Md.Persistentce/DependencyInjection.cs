@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Md.Domain.Entities.Meals;
+using Md.Domain.Entities.Customers;
 
 namespace Md.Persistentce
 {
@@ -20,7 +21,8 @@ namespace Md.Persistentce
             services.AddScoped<IRepository<Order, Guid>, RepositoryEF<Order, Guid, MdDbContext>>();
             services.AddScoped<IRepository<Meal, Guid>, RepositoryEF<Meal, Guid, MdDbContext>>();
             services.AddScoped<IRepository<Product, Guid>, RepositoryEF<Product, Guid, MdDbContext>>();
-            
+            services.AddScoped<IRepository<Customer, Guid>, RepositoryEF<Customer, Guid, MdDbContext>>();
+
             services.AddMdDbContext(configuration);
 
             services.AddIdentity<User, Role>()
