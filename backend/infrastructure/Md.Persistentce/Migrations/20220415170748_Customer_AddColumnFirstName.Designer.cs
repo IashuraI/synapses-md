@@ -3,6 +3,7 @@ using System;
 using Md.Persistentce.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Md.Persistentce.Migrations
 {
     [DbContext(typeof(MdDbContext))]
-    partial class MdDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220415170748_Customer_AddColumnFirstName")]
+    partial class Customer_AddColumnFirstName
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,7 +50,7 @@ namespace Md.Persistentce.Migrations
 
                     b.HasIndex("UpdatedUserId");
 
-                    b.ToTable("Customers", (string)null);
+                    b.ToTable("Customers");
                 });
 
             modelBuilder.Entity("Md.Domain.Entities.Delivery.DeliveryMan", b =>
@@ -72,7 +74,7 @@ namespace Md.Persistentce.Migrations
 
                     b.HasIndex("UpdatedUserId");
 
-                    b.ToTable("DeliveryMen", (string)null);
+                    b.ToTable("DeliveryMen");
                 });
 
             modelBuilder.Entity("Md.Domain.Entities.Identity.Role", b =>
@@ -207,7 +209,7 @@ namespace Md.Persistentce.Migrations
 
                     b.HasIndex("UpdatedUserId");
 
-                    b.ToTable("Addresses", (string)null);
+                    b.ToTable("Addresses");
                 });
 
             modelBuilder.Entity("Md.Domain.Entities.Meals.Category", b =>
@@ -232,7 +234,7 @@ namespace Md.Persistentce.Migrations
 
                     b.HasIndex("UpdatedUserId");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("Md.Domain.Entities.Meals.Meal", b =>
@@ -268,7 +270,7 @@ namespace Md.Persistentce.Migrations
 
                     b.HasIndex("UpdatedUserId");
 
-                    b.ToTable("Meals", (string)null);
+                    b.ToTable("Meals");
                 });
 
             modelBuilder.Entity("Md.Domain.Entities.Orders.Order", b =>
@@ -327,7 +329,7 @@ namespace Md.Persistentce.Migrations
 
                     b.HasIndex("UpdatedUserId");
 
-                    b.ToTable("Orders", (string)null);
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("Md.Domain.Entities.Orders.OrderMeal", b =>
@@ -361,7 +363,7 @@ namespace Md.Persistentce.Migrations
 
                     b.HasIndex("UpdatedUserId");
 
-                    b.ToTable("OrderMeals", (string)null);
+                    b.ToTable("OrderMeals");
                 });
 
             modelBuilder.Entity("Md.Domain.Entities.Products.Product", b =>
@@ -391,7 +393,7 @@ namespace Md.Persistentce.Migrations
 
                     b.HasIndex("UpdatedUserId");
 
-                    b.ToTable("Products", (string)null);
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("Md.Domain.Entities.Products.ProductRecord", b =>
@@ -421,7 +423,7 @@ namespace Md.Persistentce.Migrations
 
                     b.HasIndex("UpdatedUserId");
 
-                    b.ToTable("ProductRecords", (string)null);
+                    b.ToTable("ProductRecords");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>

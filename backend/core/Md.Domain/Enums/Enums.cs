@@ -3,7 +3,8 @@
     public enum OrderStatus
     {
         Open,
-        Closed
+        Closed,
+        Cancelled
     }
     public enum PaymentMethod
     {
