@@ -27,9 +27,9 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddPersistence(cfg);
 
 builder.Services.AddTransient<GeneralSeedingDataService>();
-builder.Services.AddTransient<IdentitySeedingDataServie>();
-builder.Services.AddTransient<MealSeedingDataService>();
-builder.Services.AddTransient<OrderSeedingDataServicecs>();
+builder.Services.AddTransient<IdentityDataMother>();
+builder.Services.AddTransient<MealDataMother>();
+builder.Services.AddTransient<OrderDataMother>();
 
 
 WebApplication app = builder.Build();

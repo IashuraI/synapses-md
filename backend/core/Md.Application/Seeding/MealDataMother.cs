@@ -5,19 +5,19 @@ using Synapsess.Infrastructure.Interfaces;
 
 namespace Md.Application.Seeding
 {
-    public class MealSeedingDataService
+    public class MealDataMother
     {
         public readonly IRepository<Meal, Guid> _mealRepository;
         public readonly IRepository<Product, Guid> _productRepository;
 
-        public MealSeedingDataService(IRepository<Meal, Guid> mealRepository, 
+        public MealDataMother(IRepository<Meal, Guid> mealRepository, 
             IRepository<Product, Guid> productRepository)
         {
             _mealRepository = mealRepository;
             _productRepository = productRepository;
         }
 
-        public async Task Seed()
+        public async Task SeedMealData()
         {
             List<Product> products = new() { Salmon(), Nori(), Cucumber(), Rice(), CreamCheese() };
 
@@ -32,7 +32,7 @@ namespace Md.Application.Seeding
             await _mealRepository.Create(meal);
         }
 
-        private Meal PhiladelphiaWithSalmon()
+        public Meal PhiladelphiaWithSalmon()
         {
             return new Meal()
             {
@@ -44,7 +44,7 @@ namespace Md.Application.Seeding
             };
         }
 
-        private Product Salmon()
+        public Product Salmon()
         {
             return new Product()
             {
@@ -53,7 +53,7 @@ namespace Md.Application.Seeding
             };
         }
 
-        private Product Nori()
+        public Product Nori()
         {
             return new Product()
             {
@@ -62,7 +62,7 @@ namespace Md.Application.Seeding
             };
         }
 
-        private Product Cucumber()
+        public Product Cucumber()
         {
             return new Product()
             {
@@ -71,7 +71,7 @@ namespace Md.Application.Seeding
             };
         }
 
-        private Product Rice()
+        public Product Rice()
         {
             return new Product()
             {
@@ -80,7 +80,7 @@ namespace Md.Application.Seeding
             };
         }
 
-        private Product CreamCheese()
+        public Product CreamCheese()
         {
             return new Product()
             {

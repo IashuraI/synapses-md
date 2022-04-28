@@ -5,16 +5,16 @@ using Synapsess.Infrastructure.Interfaces;
 
 namespace Md.Application.Seeding
 {
-    public class OrderSeedingDataServicecs
+    public class OrderDataMother
     {
         private readonly IRepository<Order, Guid> _orderRepository;
 
-        public OrderSeedingDataServicecs(IRepository<Order, Guid> orderRepository)
+        public OrderDataMother(IRepository<Order, Guid> orderRepository)
         {
             _orderRepository = orderRepository;
         }
 
-        public async Task Seed()
+        public async Task SeedOrderData()
         {
             await _orderRepository.Create(SushiOrder());
         }

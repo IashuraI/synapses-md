@@ -7,13 +7,13 @@ using Synapsess.Infrastructure.Interfaces;
 
 namespace Md.Application.Seeding
 {
-    public class IdentitySeedingDataServie
+    public class IdentityDataMother
     {
         private readonly RoleManager<Role> _roleManager;
         private readonly UserManager<User> _userManager;
         private readonly IRepository<Customer, Guid> _customerRepository;
 
-        public IdentitySeedingDataServie(RoleManager<Role> roleManager, UserManager<User> userManager,
+        public IdentityDataMother(RoleManager<Role> roleManager, UserManager<User> userManager,
             IRepository<Customer, Guid> customerRepository)
         {
             _roleManager = roleManager;
@@ -21,7 +21,7 @@ namespace Md.Application.Seeding
             _customerRepository = customerRepository;
         }
 
-        public async Task Seed()
+        public async Task SeedIdentityData()
         {
             await _roleManager.CreateAsync(new Role() { Name = RoleConstants.Admin });
             await _roleManager.CreateAsync(new Role() { Name = RoleConstants.DeliveryMan });
@@ -47,27 +47,27 @@ namespace Md.Application.Seeding
             await _customerRepository.Create(EllenWilkesCustomer());
         }
 
-        private User DonnieBryant()
+        public User DonnieBryant()
         {
             return new() { Id = UserConstants.DonnieBryantId, UserName = "DonnieBryant"};
         }
 
-        private User MayaBernal()
+        public User MayaBernal()
         {
             return new() { Id = UserConstants.MayaBernalId, UserName = "MayaBernal" };
         }
 
-        private User SamadSaltert()
+        public User SamadSaltert()
         {
             return new() { Id = UserConstants.SamadSaltertId, UserName = "SamadSaltert" };
         }
 
-        private User EllenWilkes()
+        public User EllenWilkes()
         {
             return new() { Id = UserConstants.EllenWilkesId, UserName = "EllenWilkes" };
         }
 
-        private Customer EllenWilkesCustomer()
+        public Customer EllenWilkesCustomer()
         {
             return new()
             {
