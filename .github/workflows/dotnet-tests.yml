@@ -16,6 +16,15 @@ jobs:
       uses: actions/setup-dotnet@v2
       with:
         dotnet-version: 6.0.x
+    - name: Restore dependencies Web Api
+      run: dotnet restore
+      working-directory: backend/presentation/Md.WebApi/
+    - name: Build Web Api
+      run: dotnet build --no-restore
+      working-directory: backend/presentation/Md.WebApi/
+    - name: Run Web Api
+      run: dotnet run
+      working-directory: backend/presentation/Md.WebApi/
     - name: Restore dependencies
       run: dotnet restore
       working-directory: backend/tests/Md.WebApi.Tests/
